@@ -65,3 +65,27 @@ var setOfQuestions = [
         answer: "a"
     }
 ];
+
+
+var time = document.getElementById("time");
+var timeleft = 60;
+var questionNum = 0;
+var score = 0;
+var questionCnt =  1;
+
+function countdownTime() {
+    var timeInt = setInterval(function () {
+
+        timeleft--;
+
+        if (timeleft <= 0) {
+            clearInterval(timeInt);
+            time.textContent = "Your time is up!";
+            
+        }
+
+
+
+    },1000);
+}
+
