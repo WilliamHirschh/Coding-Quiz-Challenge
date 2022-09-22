@@ -40,17 +40,28 @@ var setOfQuestions = [
         answer: "b"
     },
     {
-        questi
+        question: "Question 4: How do you call a function named myFunction",
+        choices: ["a. call myFunction()", "b. call function myFunction()", "c. myFunction()", "d. myFunction"],
+        answer: "c"
+    },
+    {
+        question: "Question 5: To see if two variables are qual in an if / else statement you would use _____",
+        choices: ["a. =", "b. ==", "c. 'equals", "d. !="],
+        answer: "b"
+    },
+    {
+        question: "Question 6: The first index of an array is _____",
+        choices: ["a. 0", "b. 1", "c. 8", "d. any"],
+        answer: "a"
+    },
+    {
+        question: "Question 7: How to write an IF statement in JavaScript",
+        choices: ["a. if i == 5 then", "b. if i = 5 then", "c. if(i == 5)", "d. if i =5"],
+        answer: "c"
+    },
+    {
+        question: "Question 8: Which event occurs when the user clicks on an HTML element",
+        choices: ["a. onlcick", "b. onchange", "c. onmouseover", "d. onmouseclick"],
+        answer: "a"
     }
-
-
-
-
-
-
-
-
-
-
-
 ];
