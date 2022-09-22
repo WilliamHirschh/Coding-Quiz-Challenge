@@ -95,14 +95,21 @@ function countdownTime() {
     },1000);
 }
 
-function startgame () {
+StartBtn.addEventListener("click", function () {
     displayPage.style.display = "none";
     questionsPage1.style.display = "block";
+    uestionsPage2.style.display = "block";
     questionNum = 0
     countdownTime();
-    displayQuestion(questionNum);
-    
-}
+});
+
+//function startgame () {
+   // displayPage.style.display = "none";
+    //questionsPage1.style.display = "block";
+    //questionNum = 0
+    //countdownTime();
+    //displayQuestion(questionNum);
+//}
 
 function displayQuestion (n) {
     promptedQuestions.textContent = setOfQuestions[n].question;
@@ -111,4 +118,12 @@ function displayQuestion (n) {
     button3.textContent = setOfQuestions[n].choices[2];
     button4.textContent = setOfQuestions[n].choices[3];
     questionNum = n;
+}
+
+function chkAnswer (event) {
+    event.preventDefault();
+    correcrOrWrong.style.display = "block";
+    setTimeout(function() {
+        correcrOrWrong.style.display = 'none';
+    },1000)
 }
