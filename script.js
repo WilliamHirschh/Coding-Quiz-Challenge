@@ -3,12 +3,15 @@ var highScores = document.querySelector("#high-scores");
 var displayPage = document.querySelector("#startdisplaypage")
 var codingParagraph = document.querySelector("#codingQuizChallenge")
 var StartBtn = document.querySelector("#startGame");
+var choicesEl = document.querySelector(".choices");
+var choicesElAll = document.querySelectorAll(".buttonChoice");
 
 var questionsPage1 = document.querySelector("#questions");
 var questionsPage2 = document.querySelector(".questions");
 var promptedQuestions = document.querySelector("#promptedQuestion");
 
-var buttons = document.querySelector(".buttonChoice");
+
+//var buttons = document.querySelector(".buttonChoice");
 var button1 = document.querySelector("#button1");
 var button2 = document.querySelector("#button2");
 var button3 = document.querySelector("#button3");
@@ -119,10 +122,10 @@ function displayQuestion (n) {
     button3.textContent = setOfQuestions[n].choices[2];
     button4.textContent = setOfQuestions[n].choices[3];
     questionNum = n;
+    
 }
 
-function chkIfCorrect (event) {
-    event.preventDefault();
+function chkIfCorrect(event) {
     correcrOrWrong.style.display = "block";
     setTimeout(function() {
         correcrOrWrong.style.display = 'none';
@@ -138,11 +141,6 @@ function chkIfCorrect (event) {
         displayQuestion(questionNum +1);
     }
 
+};
 
-
-
-
-
-
-
-}
+choicesEl.onclick = chkIfCorrect;
