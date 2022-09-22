@@ -98,9 +98,10 @@ function countdownTime() {
 StartBtn.addEventListener("click", function () {
     displayPage.style.display = "none";
     questionsPage1.style.display = "block";
-    uestionsPage2.style.display = "block";
+    questionsPage2.style.display = "block";
     questionNum = 0
     countdownTime();
+    displayQuestion(questionNum);
 });
 
 //function startgame () {
@@ -120,10 +121,28 @@ function displayQuestion (n) {
     questionNum = n;
 }
 
-function chkAnswer (event) {
+function chkIfCorrect (event) {
     event.preventDefault();
     correcrOrWrong.style.display = "block";
     setTimeout(function() {
         correcrOrWrong.style.display = 'none';
     },1000)
+
+    if (setOfQuestions[questionNum].answer == event.target.value) {
+        correcrOrWrong.textContent = "Correct";
+        score++;
+    } else {
+        timeleft = timeleft - 10;
+        correcrOrWrong.textContent = "Wrong, The correct answer is " + setOfQuestions[questionNum].answer;
+    } if (questionNum < setOfQuestions.length -1) {
+        displayQuestion(questionNum +1);
+    }
+
+
+
+
+
+
+
+
 }
