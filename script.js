@@ -1,9 +1,8 @@
-var topHeader = docuemnt.querySelector("#topheader");
+var topHeader = document.querySelector("#topheader");
 var highScores = document.querySelector("#high-scores");
-var time = document.querySelector("#time");
-var displayPage = document.querySelector("#start-display-page")
+var displayPage = document.querySelector("#startdisplaypage")
 var codingParagraph = document.querySelector("#codingQuizChallenge")
-var StartBtn = document.querySelector("#startQuiz");
+var StartBtn = document.querySelector("#startGame");
 
 var questionsPage1 = document.querySelector("#questions");
 var questionsPage2 = document.querySelector(".questions");
@@ -14,12 +13,18 @@ var button1 = document.querySelector("#button1");
 var button2 = document.querySelector("#button2");
 var button3 = document.querySelector("#button3");
 var button4 = document.querySelector("#button4");
-var correcrOrWronf = document.querySelector("#correctOrWrong");
+var correcrOrWrong = document.querySelector("#correctOrWrong");
 
 var submittionPage = document.querySelector("#submitScores");
 var finalScore = document.querySelector("#finalScore");
 var submitInitals = document.querySelector("#initials");
 var submitInitialsBtn = document.querySelector("#submitInitialsBtn");
+
+var highScorePage = document.querySelector("#highscore");
+var scoreHistory = document.querySelector("#scoreHistory");
+var backBtn = document.querySelector("#back");
+var clearBtn = document.querySelector("#clear");
+
 
 
 var setOfQuestions = [
@@ -77,11 +82,12 @@ function countdownTime() {
     var timeInt = setInterval(function () {
 
         timeleft--;
+        time.textContent = "Time left " + timeleft;
 
         if (timeleft <= 0) {
             clearInterval(timeInt);
             time.textContent = "Your time is up!";
-            
+
         }
 
 
@@ -89,3 +95,20 @@ function countdownTime() {
     },1000);
 }
 
+function startgame () {
+    displayPage.style.display = "none";
+    questionsPage1.style.display = "block";
+    questionNum = 0
+    countdownTime();
+    displayQuestion(questionNum);
+    
+}
+
+function displayQuestion (n) {
+    promptedQuestions.textContent = setOfQuestions[n].question;
+    button1.textContent = setOfQuestions[n].choices[0];
+    button2.textContent = setOfQuestions[n].choices[1];
+    button3.textContent = setOfQuestions[n].choices[2];
+    button4.textContent = setOfQuestions[n].choices[3];
+    questionNum = n;
+}
