@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link src="/index.css" type="stylesheet">
+</head>
+<body>
+    <header id="topheader">
+        <h1 id="high-scores">
+            View High Scores
+        </h1>
+        <h2 id="time">
+            Time
+        </h2>
+    </header>
+    <section id="start-display-page">
+        <h3 id="codingQuizChallenge">
+            Coding Quiz Challenge
+        </h3>
+        <p>
+            Try to asnwer the following code-related questions whithin the time limit.<br> Keep in mind that incorrect asnwers will penalize your score/time <br> by ten seconds!
+        </p>
+        <button id="startQuiz">
+            Start Quiz
+        </button>
+    </section>
+
+    <section class="questions" id="questions">
+        <div>
+            <div>
+                <h3 id="promptedQuestion">Question:</h3>
+                <ul>
+                    <li><button class="buttonChoice" id="button1" value="a">choice1</button></li>
+                    <li><button class="buttonChoice" id="button2" value="b">choice2</button></li>
+                    <li><button class="buttonChoice" id="button3" value="c">choice3</button></li>
+                    <li><button class="buttonChoice" id="button4" value="d">choice4</button></li>
+                </ul>
+
+            </div>
+            <div id="correctOrWrong">
+                correct! or wrong!
+            </div>
+        </div>
+    </section>
+    
+    <section class="submitScores" id="submitScores">
+        <div>
+            <h4 id="allDone">All done!</h4>
+            <p id="finalScore">Your final score is</p>
+            <p>Enter initials
+                <input id="initials">
+                <button id="submitInitialsBtn">Submit</button>
+            </p>
+        </div>
+    </section>
+
+
+
+
+
+
+    <script src="/index.js"></script>
+</body>
+</html>
