@@ -9,6 +9,9 @@ var choicesElAll = document.querySelectorAll(".buttonChoice");
 var questionsPage1 = document.querySelector("#questions");
 var questionsPage2 = document.querySelector(".questions");
 var promptedQuestions = document.querySelector("#promptedQuestion");
+var allDone = document.querySelector("#allDone");
+var enterInitals = document.querySelector("#enterInt");
+var HS = document.querySelector("#HS");
 
 
 //var buttons = document.querySelector(".buttonChoice");
@@ -75,7 +78,13 @@ var setOfQuestions = [
     }
 ];
 
-
+choicesEl.style.display = "none";
+promptedQuestions.style.display ="none";
+finalScore.style.display = "none";
+submitInitals.style.display = "none";
+allDone.style.display = "none";
+enterInitals.style.display = "none";
+HS.style.display = "none";
 var time = document.getElementById("time");
 var timeleft = 60;
 var questionNum = 0;
@@ -103,6 +112,10 @@ StartBtn.addEventListener("click", function () {
     displayPage.style.display = "none";
     questionsPage1.style.display = "block";
     questionsPage2.style.display = "block";
+    choicesEl.style.display = "block";
+promptedQuestions.style.display = "block";
+finalScore.style.display = "none";
+submitInitals.style.display = "block";
     questionNum = 0
     countdownTime();
     displayQuestion(questionNum);
@@ -147,7 +160,10 @@ questionCnt++;
 };
 
 function gameEnd () {
-
+    submitInitals.style.display = "block";
+    allDone.style.display = "block";
+    enterInitals.style.display = "block";
+    HS.style.display = "none";
     questionsPage1.style.display = "none";
     questionsPage2.style.display = "none";
     submitScores.style.display = "block";
@@ -172,6 +188,7 @@ function grabScores () {
 function displayScore () {
     scoreHistory.style.display = "block";
     scoreHistory.innerHTML = "";
+ 
     var sortScores = sort();
     var five = sortScores.slice(0,5);
     for (var i =0; i < five.length; i++);
@@ -216,7 +233,7 @@ submitInitialsBtn.addEventListener("click", function(event) {
     questionsPage2.style.display = "none";
     displayPage.style.display = "none";
     submitScores.style.display = "none";
-   
+ 
     saveTheScore();
 });
 checkScore.addEventListener("click", function(event){
@@ -226,5 +243,10 @@ questionsPage1.style.display = "none";
 questionsPage2.style.display = "none";
 displayPage.style.display = "none";
 submitScores.style.display = "none";
+
 displayScore();
 });
+backBtn.addEventListener("click", function(event){
+    event.preventDefault();
+    localStorage.clear();
+})
