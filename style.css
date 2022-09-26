@@ -20,11 +20,17 @@
     font-size: x-large;
     text-align: center;
 }
-#startGame {
+#startdisplaypage{
+    display: block;
     justify-items: center;
-    color: forestgreen;
+    
 }
+#startGame {
+    margin-left: 920px;
+}
+
 #time {
 display: inline;
-
+float: right;
+margin-top: -60px;
 }
