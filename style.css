@@ -1,15 +1,30 @@
+#topheader {
+    display: inline;
+}
+
+
+
+
 #checkScore {
-    color: blue;
+    display: inline;
+    color: forestgreen;
     font-size: large;
     
-};
+}
 .codingQuizChallenge {
    font-size: xx-large;
+   text-align: center;
 }
 
 .paragraph {
     font-size: x-large;
+    text-align: center;
 }
-.startdisplaypage {
-    margin-left: 100px;
+#startGame {
+    justify-items: center;
+    color: forestgreen;
+}
+#time {
+display: inline;
+
 }
