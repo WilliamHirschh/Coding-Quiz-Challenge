@@ -25,6 +25,7 @@ var submitInitialsBtn = document.querySelector("#submitInitialsBtn");
 
 var highScorePage = document.querySelector("#highscore");
 var scoreHistory = document.querySelector("#scoreHistory");
+var checkScore = document.querySelector("#checkScore");
 var backBtn = document.querySelector("#back");
 var clearBtn = document.querySelector("#clear");
 
@@ -176,8 +177,8 @@ function displayScore () {
     for (var i =0; i < five.length; i++);
     var item = five[i];
     var li = document.createElement("li");
-    li.textContent = "item + item.score";
-    li.setAttribute(i);
+    li.textContent = "blank";
+    li.setAttribute("index", i);
     scoreHistory.appendChild(li);
 };
 function sort () {
@@ -214,6 +215,16 @@ submitInitialsBtn.addEventListener("click", function(event) {
     questionsPage1.style.display = "none";
     questionsPage2.style.display = "none";
     displayPage.style.display = "none";
-    highScorePage.style.display = "block";
+    submitScores.style.display = "none";
+   
     saveTheScore();
+});
+checkScore.addEventListener("click", function(event){
+event.preventDefault();
+highScorePage.style.display = "block";
+questionsPage1.style.display = "none";
+questionsPage2.style.display = "none";
+displayPage.style.display = "none";
+submitScores.style.display = "none";
+displayScore();
 });
