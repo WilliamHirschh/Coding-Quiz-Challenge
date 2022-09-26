@@ -153,23 +153,30 @@ function gameEnd () {
     finalScore.textContent = "congrats your final score is: " + score;
     time.style.display = "none";
 }; 
+// function grabScores () {
+//     var lst = localStorage.getItem("listOfScores");
+//     if (lst !== ""){
+//         newlst = JSON.parse(lst);
+//         return newlst;
+//     } else {
+//         newlst = [];
+//     }
+//     return newlst;
+// }; 
+
 function grabScores () {
-    var lst = localStorage.getItem("listOfScores");
-    if (lst !== ""){
-        newlst = JSON.parse(lst);
-        return newlst;
-    } else {
-        newlst = [];
-    }
-    return newlst;
-}; 
+    var lst = JSON.parse(localStorage.getItem("scores")) || [];
+    return lst;
+};
 function displayScore () {
     scoreHistory.style.display = "block";
     scoreHistory.innerHTML = "";
     var sortScores = sort();
     var five = sortScores.slice(0,5);
     for (var i =0; i < five.length; i++);
-    li.textContent = item.user + item.score;
+    var item = five[i];
+    var li = document.createElement("li");
+    li.textContent = "item + item.score";
     li.setAttribute(i);
     scoreHistory.appendChild(li);
 };
