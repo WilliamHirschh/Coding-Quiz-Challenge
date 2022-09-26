@@ -152,7 +152,8 @@ function gameEnd () {
     submitScores.style.display = "block";
     finalScore.textContent = "congrats your final score is: " + score;
     time.style.display = "none";
-}; function grabScores () {
+}; 
+function grabScores () {
     var lst = localStorage.getItem("listOfScores");
     if (lst !== ""){
         newlst = JSON.parse(lst);
@@ -161,7 +162,8 @@ function gameEnd () {
         newlst = [];
     }
     return newlst;
-}; function displayScore () {
+}; 
+function displayScore () {
     scoreHistory.style.display = "block";
     scoreHistory.innerHTML = "";
     var sortScores = sort();
@@ -200,3 +202,11 @@ function saveTheScore (){
 
 StartBtn.addEventListener("click", chkIfCorrect);
 choicesEl.onclick = chkIfCorrect;
+submitInitialsBtn.addEventListener("click", function(event) {
+    event.preventDefault();
+    questionsPage1.style.display = "none";
+    questionsPage2.style.display = "none";
+    displayPage.style.display = "none";
+    highScorePage.style.display = "block";
+    saveTheScore();
+});
