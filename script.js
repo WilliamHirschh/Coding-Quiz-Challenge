@@ -162,6 +162,7 @@ questionCnt++;
 function gameEnd () {
     submitInitals.style.display = "block";
     allDone.style.display = "block";
+    finalScore.style.display = "block";
     enterInitals.style.display = "block";
     HS.style.display = "none";
     questionsPage1.style.display = "none";
@@ -185,7 +186,7 @@ function grabScores () {
     var lst = JSON.parse(localStorage.getItem("scores")) || [];
     return lst;
 };
-function displayScore () {
+function displayScore (initials, score) {
     scoreHistory.style.display = "block";
     scoreHistory.innerHTML = "";
  
@@ -194,7 +195,7 @@ function displayScore () {
     for (var i =0; i < five.length; i++);
     var item = five[i];
     var li = document.createElement("li");
-    li.textContent = initials + score;
+    li.textContent = initials + " " + score;
     li.setAttribute("index", i);
     scoreHistory.appendChild(li);
 };
@@ -243,6 +244,8 @@ questionsPage1.style.display = "none";
 questionsPage2.style.display = "none";
 displayPage.style.display = "none";
 submitScores.style.display = "none";
+scoreHistory.style.display = "block";
+displayScore (initials, score);
 
 displayScore();
 });
