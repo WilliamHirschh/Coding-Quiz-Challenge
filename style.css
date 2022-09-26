@@ -1,7 +1,15 @@
 #checkScore {
     color: blue;
+    font-size: large;
     
 };
-#codingQuizChallenge {
-    margin-left: 90px;
+.codingQuizChallenge {
+   font-size: xx-large;
+}
+
+.paragraph {
+    font-size: x-large;
+}
+.startdisplaypage {
+    margin-left: 100px;
 }
