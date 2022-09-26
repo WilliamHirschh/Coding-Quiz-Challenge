@@ -139,8 +139,64 @@ function chkIfCorrect(event) {
         correcrOrWrong.textContent = "Wrong, The correct answer is " + setOfQuestions[questionNum].answer;
     } if (questionNum < setOfQuestions.length -1) {
         displayQuestion(questionNum +1);
+    } else {
+        gameEnd();
     }
-
+questionCnt++;
 };
 
+function gameEnd () {
+
+    questionsPage1.style.display = "none";
+    questionsPage2.style.display = "none";
+    submitScores.style.display = "block";
+    finalScore.textContent = "congrats your final score is: " + score;
+    time.style.display = "none";
+}; function grabScores () {
+    var lst = localStorage.getItem("listOfScores");
+    if (lst !== ""){
+        newlst = JSON.parse(lst);
+        return newlst;
+    } else {
+        newlst = [];
+    }
+    return newlst;
+}; function displayScore () {
+    scoreHistory.style.display = "block";
+    scoreHistory.innerHTML = "";
+    var sortScores = sort();
+    var five = sortScores.slice(0,5);
+    for (var i =0; i < five.length; i++);
+    li.textContent = item.user + item.score;
+    li.setAttribute(i);
+    scoreHistory.appendChild(li);
+};
+function sort () {
+    var unsorted = grabScores();
+    if (grabScores == ""){
+        return;
+    } else {
+        unsorted.sort(function(a,b) {
+            return b.score - a.score;
+        })
+        return unsorted;
+    }
+};
+function addToLocal (n) {
+    var addToList = grabScores();
+    addToList.push(n);
+    localStorage.setItem("Scores", JSON.stringify(addToList));
+};
+function saveTheScore (){
+    var scoreforlocal ={
+        Initial: submitInitals.value,
+        score: score
+    }
+    addToLocal(scoreforlocal);
+    displayScore();
+};
+
+
+
+StartBtn.addEventListener("click", chkIfCorrect);
 choicesEl.onclick = chkIfCorrect;
