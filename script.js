@@ -194,7 +194,7 @@ function displayScore () {
     for (var i =0; i < five.length; i++);
     var item = five[i];
     var li = document.createElement("li");
-    li.textContent = "blank";
+    li.textContent = initials + score;
     li.setAttribute("index", i);
     scoreHistory.appendChild(li);
 };
@@ -220,7 +220,7 @@ function saveTheScore (){
         score: score
     }
     addToLocal(scoreforlocal);
-    displayScore();
+    displayScore(submitInitals.value, score);
 };
 
 
