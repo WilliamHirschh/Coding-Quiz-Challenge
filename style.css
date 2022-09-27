@@ -27,6 +27,7 @@
 }
 #startGame {
     font-size: xx-large;
+    justify-items: center;
 }
 
 #time {

@@ -89,7 +89,7 @@ var time = document.getElementById("time");
 var timeleft = 60;
 var questionNum = 0;
 var score = 0;
-var questionCnt =  1;
+var questionCnt =  0;
 
 function countdownTime() {
     var timeInt = setInterval(function () {
@@ -100,7 +100,7 @@ function countdownTime() {
         if (timeleft <= 0) {
             clearInterval(timeInt);
             time.textContent = "Your time is up!";
-
+            gameEnd();
         }
 
 
@@ -110,24 +110,16 @@ function countdownTime() {
 
 StartBtn.addEventListener("click", function () {
     displayPage.style.display = "none";
-    questionsPage1.style.display = "block";
+     questionsPage1.style.display = "block";
     questionsPage2.style.display = "block";
-    choicesEl.style.display = "block";
-promptedQuestions.style.display = "block";
-finalScore.style.display = "none";
-submitInitals.style.display = "block";
+     choicesEl.style.display = "block";
+    promptedQuestions.style.display = "block";
+    finalScore.style.display = "none";
+    submitInitals.style.display = "block";
     questionNum = 0
     countdownTime();
     displayQuestion(questionNum);
 });
-
-//function startgame () {
-   // displayPage.style.display = "none";
-    //questionsPage1.style.display = "block";
-    //questionNum = 0
-    //countdownTime();
-    //displayQuestion(questionNum);
-//}
 
 function displayQuestion (n) {
     promptedQuestions.textContent = setOfQuestions[n].question;
@@ -150,8 +142,8 @@ function chkIfCorrect(event) {
         score++;
     } else {
         timeleft = timeleft - 10;
-        correcrOrWrong.textContent = "Wrong, The correct answer is " + setOfQuestions[questionNum].answer;
-    } if (questionNum < setOfQuestions.length -1) {
+        correcrOrWrong.textContent = "Wrong, The correct answer is " + setOfQuestions[questionNum].answer;}
+     if (questionNum < setOfQuestions.length -1) {
         displayQuestion(questionNum +1);
     } else {
         gameEnd();
