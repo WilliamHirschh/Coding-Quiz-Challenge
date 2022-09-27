@@ -26,11 +26,44 @@
     
 }
 #startGame {
-    margin-left: 920px;
+    font-size: xx-large;
 }
 
 #time {
 display: inline;
 float: right;
 margin-top: -60px;
+color: red;
+}
+
+.questions {
+    display: block;
+    align-items: center;
+    font-size: xx-large;
+}
+
+.buttonChoice {
+    font-size: x-large;
+    color: forestgreen;
+}
+
+.submitScores {
+    display: flex;
+    font-size: xx-large;
+}
+
+#allDone {
+    color: forestgreen;
+    
+}
+#finalScore {
+    color: forestgreen;
+}
+
+#enterInt {
+    color: forestgreen;
+}
+#submitInitialsBtn {
+    font-size: x-large;
+    color: forestgreen;
 }
